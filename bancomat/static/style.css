@@ -1,0 +1,165 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo della pagina */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe600 0%, #fffde4 100%);
+    min-height: 100vh;
+}
+
+/* Container principale */
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px 30px 20px 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 24px rgba(0, 92, 191, 0.10), 0 1.5px 8px rgba(0, 92, 191, 0.08);
+    border-radius: 18px;
+    border: 2px solid #ffe600;
+}
+
+/* Intestazione */
+h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #005cbf;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #f44336;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* Sottotitoli messaggi */
+h2.sottotitolo-avviso, ul li.avviso {
+    color: #f44336 !important;
+    background: none;
+}
+
+h2.sottotitolo-successo, ul li.successo {
+    color: #005cbf !important;
+    background: none;
+}
+
+/* Saldo */
+p {
+    text-align: center;
+    font-size: 1.15em;
+    color: #333;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+input[type="password"], input[type="number"], input[type="text"] {
+    width: 90%;
+    padding: 13px;
+    font-size: 1em;
+    border: 2px solid #005cbf;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+input[type="password"]:focus, input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #ffe600;
+    background: #fffde4;
+    outline: none;
+}
+
+/* Bottoni */
+button {
+    width: 90%;
+    padding: 13px;
+    font-size: 1.1em;
+    background: linear-gradient(90deg, #ffe600 60%, #fffde4 100%);
+    color: #005cbf;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 92, 191, 0.07);
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #005cbf 60%, #ffe600 100%);
+    color: #fff;
+}
+
+/* Link */
+a {
+    color: #005cbf;
+    text-decoration: none;
+    font-size: 1.08em;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #f7b600;
+    text-decoration: underline;
+}
+
+/* Messaggi flash */
+ul {
+    list-style: none;
+    margin-top: 18px;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+/* Messaggi di avviso */
+ul li.avviso {
+    background-color: #f44336;
+    color: white !important;
+}
+
+/* Messaggi di successo */
+ul li.successo {
+    background-color: #e3f0ff;
+    color: #005cbf !important;
+    border: 1.5px solid #005cbf;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        padding: 10px 2vw 10px 2vw;
+    }
+    button, input[type="password"], input[type="number"], input[type="text"] {
+        width: 100%;
+    }
+}
+

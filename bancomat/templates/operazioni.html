@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Operazioni Bancomat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Operazioni Bancomat</h1>
+        <p>{{ saldo }}</p>
+
+        <!-- Sottotitolo per messaggi flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <h2 class="sottotitolo-{{ 'avviso' if category == 'error' else 'successo' }}">{{ message }}</h2>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- Prelievo -->
+        <form action="{{ url_for('prelievo') }}" method="post">
+            <input type="number" name="importo" placeholder="Importo da prelevare" min="1" required>
+            <button type="submit">Preleva</button>
+        </form>
+
+        <!-- Versamento -->
+        <form action="{{ url_for('versamento') }}" method="post">
+            <input type="number" name="importo" placeholder="Importo da versare" min="1" required>
+            <button type="submit">Versa</button>
+        </form>
+
+        <!-- Bonifico -->
+        <form action="{{ url_for('bonifico') }}" method="post">
+            <input type="text" name="destinatario" placeholder="Destinatario" required>
+            <input type="number" name="importo" placeholder="Importo bonifico" min="1" required>
+            <button type="submit">Bonifico</button>
+        </form>
+
+        <!-- Ricarica telefonica -->
+        <form action="{{ url_for('ricarica') }}" method="post">
+            <input type="text" name="numero" placeholder="Numero telefono" required>
+            <input type="number" name="importo" placeholder="Importo ricarica" min="1" required>
+            <button type="submit">Ricarica telefonica</button>
+        </form>
+
+        <!-- Storico e Logout -->
+        <a href="{{ url_for('storico') }}">Visualizza storico transazioni</a><br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
